@@ -12,7 +12,7 @@
   * [Questions](#questions)
   
   ## Installation 
-  First, install node with npm i then install express.js with npm i express
+  First, install node with npm i. Then install express.js with npm i express
   ## Usage 
   Run npm start on the command line.  Then enter the page that is created with the server inside the browser!
   ## License 
