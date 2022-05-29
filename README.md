@@ -15,7 +15,7 @@
   ## Installation 
   First, install node with npm i. Then install express.js with npm i express
   ## Usage 
-  Run npm start on the command line.  Then enter the page that is created with the server inside the browser!
+  Run npm start on the command line.  Then enter the page that is created with the server inside the browser! Enter the page using localhost:3001 on your browser!
   ## License 
   This project is licensed under no one it is a school assignment.
   ## Contributing 
