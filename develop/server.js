@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const database = require("./db/db")
 const path = require('path');
-const { fstat } = require('fs');
 
 
-const PORT = 3001;
+
+var PORT = process.env.PORT || 3001;
 
 
 
@@ -31,20 +31,18 @@ app.route('/api/notes')
     let jsonFilePath = path.join(__dirname, "/db/db.json");
     let newNote = req.body;
 
-    // This allows the test note to be the original note.
     let highestId = 99;
-    // This loops through the array and finds the highest ID.
     for (let i = 0; i < database.length; i++) {
         let individualNote = database[i];
 
         if (individualNote.id > highestId) {
-            // highestId will always be the highest numbered id in the notesArray.
+           
             highestId = individualNote.id;
         }
     }
-    // This assigns an ID to the newNote. 
+    
     newNote.id = highestId + 1;
-    // We push it to db.json.
+  
     database.push(newNote)
 
     // Write the db.json file again.
@@ -55,13 +53,23 @@ app.route('/api/notes')
         }
         console.log("Your note was saved!");
     });
-    // Gives back the response, which is the user's new note. 
+   
+   
     res.json(newNote);
 });
 
 
 
 
-app.listen(3001, () => {
-  console.log(`API server now on port 3001!`);
+
+
+
+
+
+
+
+
+
+app.listen(PORT, function () {
+  console.log("App listening on PORT " + PORT);
 });
